@@ -265,9 +265,11 @@ def predict_umbrella_needed(location: str, date: str = "today") -> dict:
     """
     Predict whether you'll need an umbrella based on precipitation forecast.
     
-    This tool applies a simple decision rule: if precipitation probability
-    exceeds 40%, recommend bringing an umbrella. It explains its reasoning
-    based on the actual forecast data.
+    This tool applies a simple decision rule based on precipitation probability:
+    - >= 60%: "yes" (definitely bring an umbrella)
+    - 40-60%: "maybe" (consider bringing one to be safe)
+    - < 40%: "no" (probably won't need an umbrella)
+    It explains its reasoning based on the actual forecast data.
     
     Args:
         location: City name or address
