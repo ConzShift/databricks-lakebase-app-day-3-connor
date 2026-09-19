@@ -1,0 +1,15 @@
+command:
+  - "python"
+  - "weather_mcp_server.py"
+
+resources:
+  - name: requirements
+    source:
+      path: ./requirements.txt
+
+# Optional: Lakebase Postgres for MCP call tracking (database_tracker.py).
+# If not configured, the server runs normally without tracking.
+# To enable, add a secret resource and uncomment the env block below:
+# env:
+#   - name: LAKEBASE_URL
+#     valueFrom: lakebase-url
